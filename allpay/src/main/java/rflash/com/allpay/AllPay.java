@@ -73,5 +73,7 @@ public class AllPay {
         mActivity.startActivityForResult(intent,requestCode);
     }
 
-
-}  
+    public static void setURL(String URL) {
+        AllPay.URL = URL;
+    }
+}

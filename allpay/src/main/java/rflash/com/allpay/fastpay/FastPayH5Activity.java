@@ -64,8 +64,9 @@ public class FastPayH5Activity extends AppCompatActivity {
             String url = bundle.getString("url");
             this.baseUrl = url + "?orderNo="+orderNo+"&orgNo="+orgNo+"&subMerNo="+subMerNo+"&transAmt="+transAmt;
         }else {
-            setIntent.putExtra(Constant.FAST_PAY_REQUEST_MES,Constant.FAST_PAY_REQUEST_ERROR);
-            setResult(Constant.FAST_RESPONSE_CODE,setIntent);
+            setIntent.putExtra(Constant.FAST_PAY_REQUEST_MES,Constant.FAST_PAY_REQUEST_ERROR_MSG);
+            setIntent.putExtra(Constant.FAST_PAY_REQUEST_CODE,Constant.FAST_PAY_REQUEST_ERROR_CODE);
+            setResult(Constant.FAST_RESPONSE_CODE, setIntent);
         }
     }
 
@@ -85,9 +86,10 @@ public class FastPayH5Activity extends AppCompatActivity {
 
    public class JSHook{
        @JavascriptInterface
-       public void activityResult(int code,String msg){
+       public void activityResult(String code,String msg){
            setIntent.putExtra(Constant.FAST_PAY_REQUEST_MES,msg);
-           setResult(code,setIntent);
+           setIntent.putExtra(Constant.FAST_PAY_REQUEST_CODE,code);
+           setResult(Constant.FAST_RESPONSE_CODE,setIntent);
            finish();
        }
    }

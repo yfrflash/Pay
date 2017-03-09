@@ -23,6 +23,8 @@ public class Constant {
     public static final String WXPAY_ERROR_PAY = "03";//微信支付失败
 
     public static final int FAST_RESPONSE_CODE = 123456;
-    public static final String FAST_PAY_REQUEST_ERROR = "f001";//请求快捷支付时，参数缺失；
+    public static final String FAST_PAY_REQUEST_ERROR_CODE = "f001";//请求快捷支付时，参数缺失；code
+    public static final String FAST_PAY_REQUEST_ERROR_MSG = "参数缺失";//请求快捷支付时，参数缺失；msg
     public static final String FAST_PAY_REQUEST_MES = "resMes";//onActivityResult回调函数中intent的键
+    public static final String FAST_PAY_REQUEST_CODE = "code";//onActivityResult回调函数中intent的键
 }
