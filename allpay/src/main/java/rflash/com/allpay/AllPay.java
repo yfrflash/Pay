@@ -60,7 +60,7 @@ public class AllPay {
         if (deBug) {
             URL = "";
         } else {
-            URL = "";
+            URL = "http://10.252.2.122:8080/fastpaygate/pay/index";
         }
         Intent intent = new Intent(mActivity, FastPayH5Activity.class);
         Bundle bundle = new Bundle();
